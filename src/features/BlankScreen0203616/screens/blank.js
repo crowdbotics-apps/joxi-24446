@@ -21,25 +21,44 @@ import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
 class Blank extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+
+    this.state = { CheckBox_11: false }
   }
   static navigationOptions = ({ navigation }) => {
     return { headerLeft: <SlideMenuIcon navigationProps={navigation} /> }
   }
 
   render = () => (
-    <View>
+    <ImageBackground
+      source={{
+        uri:
+          "https://d3tklmlrp1a8c2.cloudfront.net/media/resources/project/24446/97d4ffdc-7aa1-44ce-a632-2efe1796119f.jpg"
+      }}
+    >
       <Image source={{ uri: "https://via.placeholder.com/150" }} />
       <Icon name="star" />
-    </View>
+      <CheckBox
+        title="Checkbox"
+        containerStyle={styles.CheckBox_11}
+        checked={this.state.CheckBox_11}
+        onPress={nextChecked => this.setState({ CheckBox_11: nextChecked })}
+      />
+    </ImageBackground>
   )
 }
 
-const styles = StyleSheet.create({ View_1: {}, Image_3: {}, Icon_8: {} })
+const styles = StyleSheet.create({
+  ImageBackground_1: {},
+  Image_3: {},
+  Icon_8: {},
+  CheckBox_11: { width: 81, height: 34, textDecorationLine: "underline" }
+})
 const mapStateToProps = state => {
   return {}
 }
+
 const mapDispatchToProps = () => {
   return {}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Blank)
