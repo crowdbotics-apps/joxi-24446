@@ -29,12 +29,7 @@ class Blank extends React.Component {
   }
 
   render = () => (
-    <ImageBackground
-      source={{
-        uri:
-          "https://d3tklmlrp1a8c2.cloudfront.net/media/resources/project/24446/97d4ffdc-7aa1-44ce-a632-2efe1796119f.jpg"
-      }}
-    >
+    <ImageBackground style={styles.ImageBackground_1}>
       <Image source={{ uri: "https://via.placeholder.com/150" }} />
       <Icon name="star" />
       <CheckBox
@@ -48,11 +43,12 @@ class Blank extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  ImageBackground_1: {},
+  ImageBackground_1: { backgroundSize: "contain" },
   Image_3: {},
   Icon_8: {},
   CheckBox_11: { width: 81, height: 34, textDecorationLine: "underline" }
 })
+
 const mapStateToProps = state => {
   return {}
 }
